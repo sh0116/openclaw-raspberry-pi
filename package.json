@@ -1,0 +1,13 @@
+{
+  "name": "openclaw-raspberry-pi",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Raspberry Pi plugins, runbooks, and prototypes for running OpenClaw.",
+  "type": "module",
+  "scripts": {
+    "health": "bash scripts/host-health.sh",
+    "health:server": "node scripts/host-health-server.mjs"
+  },
+  "license": "MIT"
+}
+

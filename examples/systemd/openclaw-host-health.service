@@ -1,0 +1,14 @@
+[Unit]
+Description=OpenClaw Raspberry Pi Host Health Prototype
+After=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/pi/projects/openclaw-raspberry-pi
+ExecStart=/usr/bin/env node scripts/host-health-server.mjs
+Restart=on-failure
+RestartSec=5
+
+[Install]
+WantedBy=default.target
+
