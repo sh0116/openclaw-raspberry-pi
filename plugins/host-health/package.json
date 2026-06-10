@@ -1,0 +1,25 @@
+{
+  "name": "@sh0116/openclaw-host-health",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Raspberry Pi host health descriptor and read-only action for OpenClaw Control UI.",
+  "type": "module",
+  "openclaw": {
+    "extensions": [
+      "./index.js"
+    ],
+    "compat": {
+      "pluginApi": ">=2026.6.1",
+      "minGatewayVersion": ">=2026.6.1"
+    }
+  },
+  "peerDependencies": {
+    "openclaw": ">=2026.6.1"
+  },
+  "peerDependenciesMeta": {
+    "openclaw": {
+      "optional": true
+    }
+  }
+}
+

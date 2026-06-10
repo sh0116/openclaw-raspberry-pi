@@ -1,0 +1,26 @@
+{
+  "id": "host-health",
+  "name": "Host Health",
+  "description": "Read-only Raspberry Pi host health for OpenClaw Control UI.",
+  "activation": {
+    "onStartup": true
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "diskPaths": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "minLength": 1
+        },
+        "default": [
+          "/",
+          "/boot/firmware"
+        ]
+      }
+    }
+  }
+}
+
