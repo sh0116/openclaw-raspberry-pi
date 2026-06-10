@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="820" viewBox="0 0 1280 820" role="img" aria-labelledby="title desc">
+  <title id="title">OpenClaw Raspberry Pi Architecture</title>
+  <desc id="desc">Raspberry Pi runs OpenClaw, Obsidian Vault, Quartz, and plugins. External Mac and mobile clients connect through Tailscale and messaging channels.</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#334155"/>
+    </marker>
+    <style>
+      .bg { fill: #f8fafc; }
+      .zone { fill: #ffffff; stroke: #cbd5e1; stroke-width: 2; }
+      .zone-title { font: 700 18px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0f172a; }
+      .box { fill: #ffffff; stroke: #64748b; stroke-width: 2; rx: 10; }
+      .pi { fill: #ecfeff; stroke: #0891b2; }
+      .service { fill: #eff6ff; stroke: #2563eb; }
+      .storage { fill: #f0fdf4; stroke: #16a34a; }
+      .external { fill: #fff7ed; stroke: #ea580c; }
+      .assistant { fill: #f5f3ff; stroke: #7c3aed; }
+      .security { fill: #fef2f2; stroke: #dc2626; }
+      .label { font: 700 16px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #0f172a; }
+      .small { font: 13px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #334155; }
+      .tiny { font: 12px system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; fill: #475569; }
+      .line { stroke: #334155; stroke-width: 2.5; fill: none; marker-end: url(#arrow); }
+      .muted-line { stroke: #94a3b8; stroke-width: 2; fill: none; marker-end: url(#arrow); stroke-dasharray: 6 6; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1280" height="820"/>
+  <text x="40" y="48" class="zone-title">OpenClaw on Raspberry Pi: Personal Assistant Architecture</text>
+  <text x="40" y="76" class="small">Tailnet-first control plane, local knowledge base, Quartz publishing, and role-based specialist assistants.</text>
+
+  <rect class="zone" x="40" y="110" width="290" height="590" rx="18"/>
+  <text x="64" y="144" class="zone-title">External Devices</text>
+
+  <rect class="box external" x="70" y="175" width="220" height="86"/>
+  <text x="94" y="207" class="label">Mac / Local Dev</text>
+  <text x="94" y="232" class="small">Control UI, SSH, repo work</text>
+
+  <rect class="box external" x="70" y="295" width="220" height="86"/>
+  <text x="94" y="327" class="label">Mobile / WebChat</text>
+  <text x="94" y="352" class="small">Daily assistant entrypoint</text>
+
+  <rect class="box external" x="70" y="415" width="220" height="86"/>
+  <text x="94" y="447" class="label">Messaging Channels</text>
+  <text x="94" y="472" class="small">Telegram, WebChat, etc.</text>
+
+  <rect class="box security" x="70" y="545" width="220" height="96"/>
+  <text x="94" y="577" class="label">Public Internet</text>
+  <text x="94" y="602" class="small">Avoid by default</text>
+  <text x="94" y="624" class="tiny">Expose only reviewed paths</text>
+
+  <rect class="zone" x="370" y="110" width="220" height="590" rx="18"/>
+  <text x="394" y="144" class="zone-title">Tailnet Boundary</text>
+
+  <rect class="box security" x="400" y="250" width="160" height="112"/>
+  <text x="426" y="287" class="label">Tailscale</text>
+  <text x="426" y="312" class="small">Private access</text>
+  <text x="426" y="334" class="tiny">Serve Control UI</text>
+
+  <rect class="box security" x="400" y="430" width="160" height="112"/>
+  <text x="426" y="467" class="label">Auth Gates</text>
+  <text x="426" y="492" class="small">Operator only</text>
+  <text x="426" y="514" class="tiny">No raw secrets</text>
+
+  <rect class="zone" x="630" y="110" width="330" height="590" rx="18"/>
+  <text x="654" y="144" class="zone-title">Raspberry Pi Host</text>
+
+  <rect class="box pi" x="665" y="175" width="260" height="88"/>
+  <text x="692" y="209" class="label">OpenClaw Gateway</text>
+  <text x="692" y="234" class="small">Private control plane</text>
+
+  <rect class="box service" x="665" y="295" width="260" height="88"/>
+  <text x="692" y="329" class="label">Control UI</text>
+  <text x="692" y="354" class="small">Dashboard and sessions</text>
+
+  <rect class="box assistant" x="665" y="415" width="260" height="118"/>
+  <text x="692" y="449" class="label">Personal Assistant</text>
+  <text x="692" y="474" class="small">main router + specialists</text>
+  <text x="692" y="496" class="tiny">dev, research, obsidian, outing</text>
+
+  <rect class="box service" x="665" y="565" width="260" height="88"/>
+  <text x="692" y="599" class="label">Pi Plugins</text>
+  <text x="692" y="624" class="small">host health, backups, ops</text>
+
+  <rect class="zone" x="1000" y="110" width="240" height="590" rx="18"/>
+  <text x="1024" y="144" class="zone-title">Knowledge / Output</text>
+
+  <rect class="box storage" x="1030" y="190" width="180" height="86"/>
+  <text x="1054" y="222" class="label">Obsidian Vault</text>
+  <text x="1054" y="247" class="small">Source of truth</text>
+
+  <rect class="box storage" x="1030" y="320" width="180" height="86"/>
+  <text x="1054" y="352" class="label">Quartz</text>
+  <text x="1054" y="377" class="small">Static site build</text>
+
+  <rect class="box storage" x="1030" y="450" width="180" height="86"/>
+  <text x="1054" y="482" class="label">Project Docs</text>
+  <text x="1054" y="507" class="small">Public-safe notes</text>
+
+  <rect class="box service" x="1030" y="580" width="180" height="86"/>
+  <text x="1054" y="612" class="label">GitHub Repo</text>
+  <text x="1054" y="637" class="small">Shared toolkit</text>
+
+  <path class="line" d="M 290 218 C 345 218 345 306 400 306"/>
+  <path class="line" d="M 290 338 C 345 338 345 306 400 306"/>
+  <path class="line" d="M 290 458 C 355 458 350 486 400 486"/>
+  <path class="muted-line" d="M 290 593 C 355 593 350 486 400 486"/>
+
+  <path class="line" d="M 560 306 C 610 306 610 339 665 339"/>
+  <path class="line" d="M 560 486 C 610 486 610 219 665 219"/>
+
+  <path class="line" d="M 795 263 L 795 295"/>
+  <path class="line" d="M 795 383 L 795 415"/>
+  <path class="line" d="M 795 533 L 795 565"/>
+
+  <path class="line" d="M 925 459 C 980 459 980 233 1030 233"/>
+  <path class="line" d="M 1120 276 L 1120 320"/>
+  <path class="line" d="M 1120 406 L 1120 450"/>
+  <path class="line" d="M 925 609 C 980 609 980 623 1030 623"/>
+
+  <text x="352" y="226" class="tiny">private access</text>
+  <text x="575" y="291" class="tiny">dashboard</text>
+  <text x="966" y="219" class="tiny">notes</text>
+  <text x="1132" y="304" class="tiny">build</text>
+  <text x="958" y="646" class="tiny">share</text>
+
+  <rect class="zone" x="40" y="730" width="1200" height="54" rx="14"/>
+  <text x="64" y="763" class="small">Default posture: Raspberry Pi stays private, Tailscale carries operator traffic, Quartz publishes reviewed notes, and plugins expose only minimal read-only operational data.</text>
+</svg>
+
