@@ -38,7 +38,8 @@ See [Architecture](docs/architecture.md) for the full system overview.
 - [ ] OpenClaw plugin descriptor prototype 작성
 - [x] Control UI 표시 방식 검증
 - [x] Raspberry Pi architecture overview 작성
-- [ ] systemd service 예시 추가
+- [x] systemd service 예시 추가
+- [x] OpenClaw gateway resource limits and watchdog runbook 추가
 - [ ] Tailscale Serve 예시 추가
 - [ ] Backup and restore runbook 작성
 - [ ] Quartz/Vault 운영 runbook 작성
