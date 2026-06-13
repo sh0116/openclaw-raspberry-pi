@@ -12,6 +12,7 @@ Raspberry Pi에서 OpenClaw를 오래 켜두고 운영하기 위한 플러그인
 ## Initial Scope
 
 - `docs/architecture.md`: Raspberry Pi, Tailscale, OpenClaw, Vault, Quartz, personal assistant roles를 묶은 architecture overview
+- `docs/control-ui-host-health-panel.md`: Control UI 안에 Raspberry Pi health panel을 붙이는 현재 방식
 - `plugins/host-health`: CPU, memory, disk, temperature, uptime을 읽는 OpenClaw 플러그인 후보
 - `runbooks/`: Raspberry Pi 운영 절차
 - `docs/`: 설계 문서와 공유용 설명
@@ -35,7 +36,7 @@ See [Architecture](docs/architecture.md) for the full system overview.
 
 - [ ] Host health metric collector 작성
 - [ ] OpenClaw plugin descriptor prototype 작성
-- [ ] Control UI 표시 방식 검증
+- [x] Control UI 표시 방식 검증
 - [x] Raspberry Pi architecture overview 작성
 - [ ] systemd service 예시 추가
 - [ ] Tailscale Serve 예시 추가
