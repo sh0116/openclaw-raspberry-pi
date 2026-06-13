@@ -6,8 +6,8 @@
   "type": "module",
   "scripts": {
     "health": "bash scripts/host-health.sh",
-    "health:server": "node scripts/host-health-server.mjs"
+    "health:server": "node scripts/host-health-server.mjs",
+    "resilience:apply": "bash scripts/apply-openclaw-resilience.sh"
   },
   "license": "MIT"
 }
-
